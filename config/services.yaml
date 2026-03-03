@@ -1,0 +1,5 @@
+services:
+    MstudioDev\SchuljahrByInsertTag\:
+        resource: '../src/'
+        autowire: true
+        autoconfigure: true
