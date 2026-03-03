@@ -28,16 +28,25 @@ Die Auswertung erfolgt in der Zeitzone `Europe/Berlin`.
 composer require mstudio-dev/schuljahr-by-insert-tag
 ```
 
-### Manuelle Installation
+### Lokale Entwicklung (Path Repository)
 
-1. Paket in das Verzeichnis `packages/schuljahr-by-insert-tag/` kopieren.
-2. Bundle in `config/bundles.php` registrieren:
+1. `composer.json` der Contao-Installation anpassen:
 
-```php
-return [
-    // ...
-    MstudioDev\SchuljahrByInsertTag\SchuljahrByInsertTagBundle::class => ['all' => true],
-];
+```json
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../pfad/zum/schuljahr-by-insert-tag"
+        }
+    ]
+}
+```
+
+2. Paket einbinden:
+
+```bash
+composer require mstudio-dev/schuljahr-by-insert-tag:@dev
 ```
 
 3. Symfony-Cache leeren:
